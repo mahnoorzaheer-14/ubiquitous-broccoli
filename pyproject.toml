@@ -38,7 +38,7 @@ reportImportCycles = false
 typeCheckingMode = "strict"
 venv = ".venv"
 venvPath = "."
-exclude = [
+ingore = [
     "./typings/*",
     "**/node_modules",
     "**/__pycache__",
