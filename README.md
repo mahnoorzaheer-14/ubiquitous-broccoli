@@ -50,6 +50,31 @@ Install pre-commit hooks:
 poetry run pre-commit install
 ```
 
+Run linting:
+```bash
+poetry run ruff check .
+```
+
+Run type checking:
+```bash
+poetry run pyright
+```
+
+## Important Libraries
+- [pydantic](https://docs.pydantic.dev/)
+- [pydantic settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
+- [python mqtt client library](https://aiomqtt.bo3hm.com/subscribing-to-a-topic)
+
+## References
+
+- [Eniris MQTT documentation](https://docs.eniris.be/en/Controller/External%20Signals/MQTT/eniris-mqtt)
+- [S2 PowerMeasurement documentation](https://docs.s2standard.org/model-reference/Common/PowerMeasurement/)
+
+## MQTT
+- [Public mqtt broker](https://www.mqtt-dashboard.com/)
+- [basics of MQTT](https://www.hivemq.com/mqtt/)
+- [webbased MQTT client](https://www.hivemq.com/demos/websocket-client/)
+
 # Dummy WebSocket Server
 
 This is a simple WebSocket server for testing purposes. It accepts all connections on `/s2` and prints any messages it receives, formatting them prettily if they are JSON.
@@ -67,20 +92,3 @@ This is a simple WebSocket server for testing purposes. It accepts all connectio
 The server will listen on `ws://0.0.0.0:8000/s2`.
 
 Any message sent to this endpoint will be printed to the console. JSON messages will be pretty-printed.
-
-Run linting:
-```bash
-poetry run ruff check .
-```
-
-Run type checking:
-```bash
-poetry run pyright
-```
-
-
-## References
-
-- [Eniris MQTT documentation](https://docs.eniris.be/en/Controller/External%20Signals/MQTT/eniris-mqtt)
-- [S2 PowerMeasurement documentation](https://docs.s2standard.org/model-reference/Common/PowerMeasurement/)
-- [s2-python library](https://github.com/flexiblepower/s2-python)
