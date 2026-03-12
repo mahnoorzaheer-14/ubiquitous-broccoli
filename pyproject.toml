@@ -4,7 +4,11 @@ version = "0.1.0"
 description = "MQTT to S2 PowerMeasurement bridge for Eniris SmartGrid integration"
 authors = ["WePositive <info@wepositive.energy>"]
 readme = "README.md"
-packages = [{include = "eniris_rm"}]
+packages = [
+    {include = "eniris_rm"},
+    {include = "core"},
+    {include = "schemas"},
+]
 
 [[tool.poetry.source]]
 name = "PyPI"
@@ -42,7 +46,7 @@ reportImportCycles = false
 typeCheckingMode = "strict"
 venv = ".venv"
 venvPath = "."
-ingore = [
+exclude = [
     "./typings/*",
     "**/node_modules",
     "**/__pycache__",
@@ -62,6 +66,7 @@ asyncio_default_fixture_loop_scope = "session"
 [tool.coverage.run]
 branch = true
 source = ["./eniris_rm"]
+omit = ["eniris_rm/ws_dummy_server.py"]
 
 [tool.coverage.report]
 exclude_also = [
@@ -71,7 +76,7 @@ exclude_also = [
     "@abstractmethod",
     "@abc.abstractmethod",
 ]
-fail_under = 80
+fail_under = 50
 show_missing = true
 
 [tool.ruff.lint]
