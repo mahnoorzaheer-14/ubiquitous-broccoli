@@ -66,7 +66,7 @@ asyncio_default_fixture_loop_scope = "session"
 [tool.coverage.run]
 branch = true
 source = ["./eniris_rm"]
-omit = ["eniris_rm/ws_dummy_server.py"]
+omit = ["eniris_rm/ws_dummy_server.py", "eniris_rm/__main__.py"]
 
 [tool.coverage.report]
 exclude_also = [
@@ -76,7 +76,7 @@ exclude_also = [
     "@abstractmethod",
     "@abc.abstractmethod",
 ]
-fail_under = 50
+fail_under = 80
 show_missing = true
 
 [tool.ruff.lint]

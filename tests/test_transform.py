@@ -8,7 +8,7 @@ from pydantic import ValidationError
 from pytest import LogCaptureFixture
 from s2python.generated.gen_s2 import CommodityQuantity
 
-from eniris_rm.__main__ import process_mqtt_payload, transform_message
+from eniris_rm.message_processing import process_mqtt_payload, transform_message
 from schemas.message import MQTTFeedbackMessage
 
 
