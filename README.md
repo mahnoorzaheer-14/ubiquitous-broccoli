@@ -92,3 +92,8 @@ This is a simple WebSocket server for testing purposes. It accepts all connectio
 The server will listen on `ws://0.0.0.0:8000/s2`.
 
 Any message sent to this endpoint will be printed to the console. JSON messages will be pretty-printed.
+
+
+## Assumptions
+
+Please refer to the comments added in eniris_rm/message_processing.py
